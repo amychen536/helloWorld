@@ -44,6 +44,7 @@
                 &nbsp;
                 <a href="{{ url_for('student_delete', student_id=each_student['student_id']) }}" class="btn btn-secondary" role="button">Delete</a>
             </td>
+            <td>{{ each_student['email'] }}</td>
         </tr>
         {% endfor %}
     </table>
