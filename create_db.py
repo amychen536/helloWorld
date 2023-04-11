@@ -27,6 +27,7 @@ with app.app_context():
             'password': generate_password_hash('adminpw', method='sha256'), 'role': 'ADMIN'}
     ]
 
+
     for each_user in users:
         print(f'{each_user["username"]} inserted into user')
         a_user = User(username=each_user["username"], email=each_user["email"], first_name=each_user["first_name"],
