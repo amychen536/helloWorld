@@ -206,11 +206,6 @@ def student_delete(student_id):
 
     return redirect(url_for('student_view_all'))
 
-@app.route('/training')
-@login_required
-@role_required(['ADMIN', 'MANAGER'])
-def training():
-    return render_template('training.html')
 
 @app.route('/error')
 def error():
@@ -224,6 +219,11 @@ def page_not_found(e):
     flash(f'Sorry! You are trying to access a page that does not exist. Please contact support if this problem persists.', 'error')
     return render_template('404.html'), 404
 
+@app.route('/training')
+@login_required
+@role_required(['ADMIN', 'MANAGER'])
+def training():
+    return render_template('training.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
